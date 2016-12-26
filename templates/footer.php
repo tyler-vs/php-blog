@@ -21,14 +21,18 @@
       </div>
     </footer>
     <?php
-    if ( ERRLOG && (count($err_log_array) > 0) ) {
+    // error reporting
+    if ( ERRLOG ) {
+      print '<script>console.log("error reporting turned on");</script>';
       print "<ul>";
       foreach ($err_log_array as $error => $value) {
         print "<li><b class=\"\">$error</b> &mdash; $value.</li>";
       }
       print "</ul>";
+    } else {
+      print '<script>console.log("error reporting turned off");</script>';
     }
-     ?>
+    ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/script.js"></script>

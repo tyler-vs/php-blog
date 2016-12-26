@@ -32,7 +32,8 @@
             'signup'        => 'signup.php',
             'signin'        => 'signin.php',
             'press'         => 'press.php',
-            'new features'  => 'new-features.php'
+            'new features'  => 'new-features.php',
+            'debug'         =>  'debug.php'
           );
 
           // output all the available pages
