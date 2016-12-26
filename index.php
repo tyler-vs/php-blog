@@ -4,6 +4,7 @@
  * ---------
  */
 
+define('PAGETITLE', 'home' );
 include('inc/env.php');
 
 $current_page = 'home';

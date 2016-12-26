@@ -8,4 +8,4 @@
  *
  */
  ?>
-<p><a class="btn btn-primary" href="signin.php">Sign in</a>, not a member yet? <a class="btn btn-default" href="signup.php">Sign up</a>!</p>
+<p><a class="btn btn-primary" href="login.php">Login</a>, not a member yet? <a class="btn btn-default" href="register.php">Regisier</a>!</p>

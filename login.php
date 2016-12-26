@@ -1,13 +1,12 @@
 <?php
 /**
- * index.php
- * ---------
+ * login
+ * -----
  */
 
+define('PAGETITLE', 'login' );
 include('inc/env.php');
 include('inc/form-functions.php');
-
-$current_page = 'login';
 
  ?>
 <?php include('templates/header.php'); ?>
@@ -15,9 +14,9 @@ $current_page = 'login';
     <div class="container">
 
       <div class="blog-header">
-        <h1 class="blog-title"><?php print $current_page; ?></h1>
+        <h1 class="blog-title"><?php print ucwords(PAGETITLE); ?></h1>
         <p class="lead blog-description">login using this form.</p>
-        <?php if ( ! $user_signed_in ) {
+        <?php if ( ! $user_signed_in || PAGETITLE != 'login' || PAGETITLE != 'register' ) {
           include_once( 'templates/join-now-cta.php' );
         } ?>
       </div>
@@ -31,7 +30,6 @@ $current_page = 'login';
 
           } else {
 
-          }
           ?>
           <form action="login.php" method="post">
             <div class="row">
@@ -51,6 +49,7 @@ $current_page = 'login';
               <input class="button--round" type="submit">
             </div>
           </form>
+          <?php } // end ?>
         </div><!-- /.blog-main -->
 
         <?php // include('templates/sidebar.php'); ?>

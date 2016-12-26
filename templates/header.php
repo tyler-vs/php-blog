@@ -11,7 +11,7 @@
     <title><?php
 
     if (defined('SITENAME')) {
-      print SITENAME . ' &vert; ' . ucwords( $current_page );
+      print SITENAME . ' &vert; ' . ucwords( PAGETITLE );
     } else {
       $err_log_array[] = 'site title is missing/not defined';
     }
@@ -29,7 +29,7 @@
           $pages=array(
             'home'          => 'index.php',
             'about'         => 'about.php',
-            'signup'        => 'signup.php',
+            'register'      => 'register.php',
             'login'         => 'login.php',
             'press'         => 'press.php',
             'new features'  => 'new-features.php',
@@ -39,7 +39,7 @@
           // output all the available pages
           foreach( $pages as $key => $value ) {
 
-            if ( $current_page == $key ) {
+            if ( PAGETITLE == $key ) {
               print '<a class="blog-nav-item active" href="' . $value . '">' . ucwords( $key ) . '</a>';
             } else {
               print '<a class="blog-nav-item" href="' . $value . '">' . ucwords( $key ) . '</a>';
