@@ -21,14 +21,19 @@
  * ------------------------------
  */
 define( 'SITENAME', 'PHP Blog Project' );
-
+define('ERRLOG', TRUE);
+define('VERSION', 2.12);
 
 /**
  * 02. enable error reporting
  * --------------------------
  */
-ini_set( 'display_errors', 1 );
-error_reporting( E_ALL );
+if (defined('ERRLOG')) {
+  ini_set( 'display_errors', 1 );
+  error_reporting( E_ALL );
+
+  $err_log_array = [];
+}
 
 
 /**

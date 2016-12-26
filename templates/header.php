@@ -8,7 +8,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><?php print SITENAME . ' &vert; ' . ucwords( $current_page ); ?></title>
+    <title><?php
+
+    if (defined('SITENAME')) {
+      print SITENAME . ' &vert; ' . ucwords( $current_page );
+    } else {
+      $err_log_array[] = 'site title is missing/not defined';
+    }
+    ?></title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <link href="css/main.css" rel="stylesheet">
   </head>
