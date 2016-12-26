@@ -30,7 +30,7 @@
             'home'          => 'index.php',
             'about'         => 'about.php',
             'signup'        => 'signup.php',
-            'signin'        => 'signin.php',
+            'login'         => 'login.php',
             'press'         => 'press.php',
             'new features'  => 'new-features.php',
             'debug'         =>  'debug.php'

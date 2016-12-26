@@ -5,8 +5,9 @@
  */
 
 include('inc/env.php');
+include('inc/form-functions.php');
 
-$current_page = 'home';
+$current_page = 'login';
 
  ?>
 <?php include('templates/header.php'); ?>
@@ -27,14 +28,32 @@ $current_page = 'home';
           <?php
           if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { // warning: post is case-sensitive
 
+
           } else {
 
           }
           ?>
-          <form action="login.php" method="post"></form>
+          <form action="login.php" method="post">
+            <div class="row">
+              <div class="twelve columns">
+                <label>user name</label>
+                <input class="u-full-width" type="text" name="user_name" value="<?php preset_value('user_name'); ?>">
+              </div>
+            </div>
+            <div class="row">
+              <div class="twelve columns">
+                <label>your email</label>
+                <input class="u-full-width" type="email" name="user_email" value="<?php preset_value('user_email'); ?>">
+              </div>
+            </div>
+            <div class="row">
+              <!-- <input type="hidden" name="hidden-form-element" value="send-form"> -->
+              <input class="button--round" type="submit">
+            </div>
+          </form>
         </div><!-- /.blog-main -->
 
-        <?php include('templates/sidebar.php'); ?>
+        <?php // include('templates/sidebar.php'); ?>
 
       </div><!-- /.row -->
 
