@@ -8,6 +8,8 @@
 <a href=".">go back</a> &vert; <a href="index.php">go home</a> &vert; <a href="css/">see css files</a> &vert; <a href="js/">view js files</a> &vert; <a href="reademe.txt">view readme file</a>.
 <h1>debug page</h1>
 <?php
+include('inc/env.php');
+
 //
 // collect predefined PHP contants
 // and output.
@@ -46,5 +48,11 @@ $debug_message = array();
 $timezone = date('e');
 print "time is set to: $timezone.";
  ?>
+<hr>
+<h3>server information</h3>
+<pre>
+  <?php print_r($_SERVER); ?>
+</pre>
+<hr>
 </body>
 </html>

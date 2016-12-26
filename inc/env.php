@@ -45,4 +45,11 @@ if ( defined('ERRLOG') && ERRLOG == true ) {  // if defined and TRUE
  */
 $user_signed_in = 0;
 
+
+/**
+ * 04. date and time settings
+ * --------------------------
+ */
+date_default_timezone_set(TIMEZONE);
+
  ?>
