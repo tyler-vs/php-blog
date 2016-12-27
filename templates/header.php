@@ -39,6 +39,8 @@ ob_start();
             'debug'         => 'debug.php'
           );
 
+          // if user is logged in, determined by a cookie
+          // then remove the login and register nav menu items.
           if ( 'LOGGEDIN' == true ) {
             unset($pages['login']);
             unset($pages['register']);

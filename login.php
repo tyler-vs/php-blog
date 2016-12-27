@@ -41,7 +41,7 @@ include('inc/form-functions.php');
                 // setup a cookie for user
                 // NOTE: this can only be done within the script
                 // because output buffer technique is in use!!
-                setcookie('bloguser', $_POST['user_email']);
+                setcookie('bloguser', $_POST['user_email'], time()+10000000, '/', '', 0);
 
                 // correct, send user to welcome screen
                 ob_end_clean(); // end current buffer
