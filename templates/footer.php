@@ -38,3 +38,7 @@
     <script src="js/script.js"></script>
   </body>
 </html>
+<?php
+// end output buffering
+ob_end_flush();
+ ?>

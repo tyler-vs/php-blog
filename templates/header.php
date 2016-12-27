@@ -3,6 +3,9 @@
  * header.php
  * ----------
  */
+
+// begin output buffering
+ob_start();
  ?>
 <!DOCTYPE html>
 <html lang="en">
