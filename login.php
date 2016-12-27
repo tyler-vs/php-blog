@@ -29,19 +29,26 @@ include('inc/form-functions.php');
             // handle form
 
             // check if fields are empty or not
-            if ( !empty($_POST['user_email']) || !empty($_POST['user_password']) ) {
+            if ( !empty($_POST['email']) || !empty($_POST['user_password']) ) {
 
               // check demo validate
               // - me@example.com
               // - testpass
               if (
-                  ( strtolower($_POST['user_email']) == 'me@example.com') &&
+                  ( strtolower($_POST['email']) == 'me@example.com') &&
                   ( strtolower($_POST['user_password']) == 'testpass' ) ) {
 
-                // setup a cookie for user
-                // NOTE: this can only be done within the script
-                // because output buffer technique is in use!!
-                setcookie('bloguser', $_POST['user_email'], time()+10000000, '/', '', 0);
+                // upon successful validation, start a user session,
+                // because output buffering technique is used we can
+                // call a session start here instead of on top of a
+                // page, where it normally would occur.
+                // any page that wants to use $_SESSION array will need
+                // to decalre this function near the top of that page.
+                session_start();
+                // use session to add variables
+                $_SESSION['email'] = $_POST['email'];
+                $_SESSION['loggedin'] = time();
+
 
                 // correct, send user to welcome screen
                 ob_end_clean(); // end current buffer
@@ -65,8 +72,8 @@ include('inc/form-functions.php');
           <form action="login.php" method="post">
             <div class="row">
               <div class="twelve columns">
-                <label for="user_email">user email</label>
-                <input class="u-full-width" type="email" name="user_email" value="<?php preset_value('user_email'); ?>">
+                <label for="email">user email</label>
+                <input class="u-full-width" type="email" name="email" value="<?php preset_value('email'); ?>">
               </div>
             </div>
             <div class="row">

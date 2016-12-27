@@ -43,12 +43,12 @@ if ( defined('ERRLOG') && ERRLOG == true ) {  // if defined and TRUE
  * 03. user status and handling
  * ----------------------------
  */
-if (isset($_COOKIE['user_email'])) {
+/*if (isset($_COOKIE['user_email'])) {
   // $user_signed_in = true;
   define('LOGGEDIN', true);
 } else {
   define('LOGGEDIN', false);
-}
+}*/
 
 
 /**
