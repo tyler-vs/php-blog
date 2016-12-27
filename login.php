@@ -1,7 +1,6 @@
 <?php
 /**
  * login
- * -----
  */
 
 define('PAGETITLE', 'login' );
@@ -16,9 +15,6 @@ include('inc/form-functions.php');
       <div class="blog-header">
         <h1 class="blog-title"><?php print ucwords(PAGETITLE); ?></h1>
         <p class="lead blog-description">login using this form.</p>
-        <?php if ( ! $user_signed_in || PAGETITLE != 'login' || PAGETITLE != 'register' ) {
-          include_once( 'templates/join-now-cta.php' );
-        } ?>
       </div>
 
       <div class="row">
@@ -41,6 +37,11 @@ include('inc/form-functions.php');
               if (
                   ( strtolower($_POST['user_email']) == 'me@example.com') &&
                   ( strtolower($_POST['user_password']) == 'testpass' ) ) {
+
+                // setup a cookie for user
+                // NOTE: this can only be done within the script
+                // because output buffer technique is in use!!
+                setcookie('bloguser', $_POST['user_email']);
 
                 // correct, send user to welcome screen
                 ob_end_clean(); // end current buffer

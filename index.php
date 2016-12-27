@@ -16,9 +16,6 @@ include('inc/env.php');
       <div class="blog-header">
         <h1 class="blog-title"><?php print SITENAME; ?></h1>
         <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
-        <?php if ( ! $user_signed_in ) {
-          include_once( 'templates/join-now-cta.php' );
-        } ?>
       </div>
 
       <div class="row">

@@ -43,7 +43,12 @@ if ( defined('ERRLOG') && ERRLOG == true ) {  // if defined and TRUE
  * 03. user status and handling
  * ----------------------------
  */
-$user_signed_in = 0;
+if (isset($_COOKIE['user_email'])) {
+  // $user_signed_in = true;
+  define('LOGGEDIN', true);
+} else {
+  define('LOGGEDIN', false);
+}
 
 
 /**
@@ -52,4 +57,10 @@ $user_signed_in = 0;
  */
 date_default_timezone_set(TIMEZONE);
 
- ?>
+
+
+/**
+ * 05. header action
+ * -----------------
+ * makeshift action filter
+ */

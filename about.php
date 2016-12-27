@@ -1,12 +1,15 @@
 <?php
 /**
- * index.php
- * ---------
+ * about
+ *
+ * a page for describing the site
  */
 
+
+define('PAGETITLE', ucfirst('about') );
 require('inc/env.php');
 
-$current_page = 'about';
+// $current_page = 'about';
 
  ?>
 <?php require('templates/header.php'); ?>

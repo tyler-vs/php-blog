@@ -36,13 +36,18 @@ ob_start();
             'login'         => 'login.php',
             'press'         => 'press.php',
             'new features'  => 'new-features.php',
-            'debug'         =>  'debug.php'
+            'debug'         => 'debug.php'
           );
+
+          if ( 'LOGGEDIN' == true ) {
+            unset($pages['login']);
+            unset($pages['register']);
+          }
 
           // output all the available pages
           foreach( $pages as $key => $value ) {
 
-            if ( PAGETITLE == $key ) {
+            if ( strtolower(PAGETITLE) == $key ) {
               print '<a class="blog-nav-item active" href="' . $value . '">' . ucwords( $key ) . '</a>';
             } else {
               print '<a class="blog-nav-item" href="' . $value . '">' . ucwords( $key ) . '</a>';
