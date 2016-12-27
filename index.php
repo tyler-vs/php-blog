@@ -4,10 +4,9 @@
  * ---------
  */
 
+// include external sources
 define('PAGETITLE', 'home' );
 include('inc/env.php');
-
-$current_page = 'home';
 
  ?>
 <?php include('templates/header.php'); ?>
