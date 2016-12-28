@@ -24,8 +24,4 @@ define('PAGE_DESCRIPTION', 'about this website.' );
 
         <?php include('templates/sidebar.php'); ?>
 
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
-
 <?php require('templates/footer.php'); ?>

@@ -32,8 +32,4 @@ define('PAGE_DESCRIPTION', 'This is the logout page for the website' );
 
         <?php include('templates/sidebar.php'); ?>
 
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
-
 <?php require('templates/footer.php'); ?>

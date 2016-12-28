@@ -34,6 +34,7 @@ define('PAGE_DESCRIPTION', 'Please login' );
                 // page, where it normally would occur.
                 // any page that wants to use $_SESSION array will need
                 // to decalre this function near the top of that page.
+                // session_name('YourVisit');
                 session_start();
                 // use session to add variables
                 $_SESSION['email'] = $_POST['email'];
@@ -82,8 +83,5 @@ define('PAGE_DESCRIPTION', 'Please login' );
 
         <?php // include('templates/sidebar.php'); ?>
 
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
 
 <?php require('templates/footer.php'); ?>

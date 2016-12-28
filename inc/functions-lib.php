@@ -33,14 +33,6 @@ function preset_value( $val ) {
 }
 
 
-// make text input function
-// - name
-// - label
-// - array(), all other parameters,
-// for select it would be all the options,
-// each array designed based on input type
-// - output error associated with $name?
-
 /**
  * [makeTextInput description]
  * @param  [type] $name        [description]
@@ -48,11 +40,13 @@ function preset_value( $val ) {
  * @param  [type] $requestType [description]
  * @return [type]              [description]
  */
-function makeTextInput( $name, $label, $requestType = 'post' ) {
 
-  $stickyValue = '';
+function make_test_input( $name, $label, $form_request_type = 'POST' ) {
 
   // var to hold value
+  $stickyValue = '';
+
+
   if ( strtoupper($requestType) == 'GET' ) {
     if (isset($_GET[$name])) {
       $stickyValue = htmlspecialchars($_GET[$name]);
@@ -67,7 +61,7 @@ function makeTextInput( $name, $label, $requestType = 'post' ) {
 
   // output the input
   print "<label for=\"$name\"> $label :\n";
-  print  "<input type=\"text\" name=\"$name\" value=\"$stickyValue\">\n";
+  print "<input type=\"text\" name=\"$name\" value=\"$stickyValue\">\n";
   print "</label>\n";
 
 

@@ -34,8 +34,4 @@ $current_page = 'signup';
 
         <?php include('templates/sidebar.php'); ?>
 
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
-
 <?php require('templates/footer.php'); ?>

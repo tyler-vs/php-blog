@@ -4,7 +4,7 @@
  */
 
 define('PAGE_TITLE', 'register' );
-define('PAGE_DESCRIPTION', ucfirst('Register to use this website.') );
+define('PAGE_DESCRIPTION', 'Register to use this website.' );
 
  ?>
 <?php include('templates/header.php'); ?>
@@ -12,7 +12,7 @@ define('PAGE_DESCRIPTION', ucfirst('Register to use this website.') );
         <div class="eight columns blog-main">
           <?php
           // if request
-          if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { // warning: post is case-sensitive
+          if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { // warning: post is case-sensitive and should appear as uppercase
 
             // valifation variables
             $form_problems = [];
@@ -20,6 +20,7 @@ define('PAGE_DESCRIPTION', ucfirst('Register to use this website.') );
             /**
              * check if any of the expected variables are missing
              */
+
             if (empty($_POST['first_name'])) {
               $form_problems[] = 'please enter a first name';
             }
@@ -82,9 +83,5 @@ define('PAGE_DESCRIPTION', ucfirst('Register to use this website.') );
             </div>
           </form>
         </div><!-- /.blog-main -->
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
 
 <?php require('templates/footer.php'); ?>
