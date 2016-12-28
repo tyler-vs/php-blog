@@ -17,28 +17,16 @@ $_SESSION = [];
 // remove session data from server
 session_destroy();
 
-// clear session cookie
-// setcookie();
 
-
-define('PAGETITLE', ucwords('logout') );
-include('inc/env.php');
+define('PAGE_TITLE', 'logout' );
+define('PAGE_DESCRIPTION', 'This is the logout page for the website' );
 
  ?>
 <?php include('templates/header.php'); ?>
 
-    <div class="container">
-
-      <div class="blog-header">
-        <h1 class="blog-title"><?php print PAGETITLE; ?></h1>
-        <p class="lead blog-description"></p>
-      </div>
-
-      <div class="row">
-
         <div class="eight columns blog-main">
 
-        <p>Go to <a href="index.php">home</a> or <a href="login.php">sign back in</a></p>
+          <p>Go to <a href="index.php">home</a> or <a href="login.php">sign back in</a></p>
 
         </div><!-- /.blog-main -->
 

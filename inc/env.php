@@ -3,7 +3,8 @@
  * env.php
  * -------
  *
- * contains commonly used environment variables, database connection variables.
+ * Contains commonly used environment variables, database connection variables.
+ * This script is ran on every page.
  */
 
 
@@ -20,10 +21,10 @@
  * 01. define site-wide constants
  * ------------------------------
  */
-define( 'SITENAME', 'PHP Blog Project' );
+define( 'SITE_NAME', 'PHP Blog Project' );
 define( 'ERRLOG', TRUE );
 define( 'VERSION', 2.12 );
-define( 'TIMEZONE', 'America/New_York' );
+define( 'TIME_ZONE', 'America/New_York' );
 define( 'POSTED_ON_FORMAT', date('F j, Y') ); // Month d, YYYY
 
 /**
@@ -55,7 +56,7 @@ if ( defined('ERRLOG') && ERRLOG == true ) {  // if defined and TRUE
  * 04. date and time settings
  * --------------------------
  */
-date_default_timezone_set(TIMEZONE);
+date_default_timezone_set(TIME_ZONE);
 
 
 

@@ -1,27 +1,13 @@
 <?php
 /**
  * register
- * --------
  */
 
-define('PAGETITLE', 'register' );
-include('inc/env.php');
-include('inc/form-functions.php');
+define('PAGE_TITLE', 'register' );
+define('PAGE_DESCRIPTION', ucfirst('Register to use this website.') );
 
  ?>
 <?php include('templates/header.php'); ?>
-
-    <div class="container">
-
-      <div class="blog-header">
-        <h1 class="blog-title"><?php print ucwords(PAGETITLE); ?></h1>
-        <!-- <p class="lead blog-description">login using this form.</p> -->
-        <?php if ( ! $user_signed_in ) {
-          include_once( 'templates/join-now-cta.php' );
-        } ?>
-      </div>
-
-      <div class="row">
 
         <div class="eight columns blog-main">
           <?php
@@ -57,9 +43,7 @@ include('inc/form-functions.php');
               print "no errors found!";
             }
 
-          }
-
-          // no else default for registration page.
+          } // no else default for registration page.
 
           ?>
           <form action="login.php" method="post">
@@ -94,7 +78,6 @@ include('inc/form-functions.php');
               </div>
             </div>
             <div class="row">
-              <!-- <input type="hidden" name="hidden-form-element" value="send-form"> -->
               <input class="button--round" type="submit" value="Register">
             </div>
           </form>

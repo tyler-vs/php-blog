@@ -3,21 +3,11 @@
  * login
  */
 
-define('PAGETITLE', 'login' );
-include('inc/env.php');
-include('inc/form-functions.php');
+define('PAGE_TITLE', 'login' );
+define('PAGE_DESCRIPTION', 'Please login' );
 
  ?>
 <?php include('templates/header.php'); ?>
-
-    <div class="container">
-
-      <div class="blog-header">
-        <h1 class="blog-title"><?php print ucwords(PAGETITLE); ?></h1>
-        <p class="lead blog-description">login using this form.</p>
-      </div>
-
-      <div class="row">
 
         <div class="eight columns blog-main">
           <?php

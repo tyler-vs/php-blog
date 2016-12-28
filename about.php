@@ -5,29 +5,19 @@
  * a page for describing the site
  */
 
-
-define('PAGETITLE', ucfirst('about') );
-require('inc/env.php');
-
-// $current_page = 'about';
+// page specific variables
+define('PAGE_TITLE', ucfirst('about') );
+define('PAGE_DESCRIPTION', 'about this website.' );
 
  ?>
 <?php require('templates/header.php'); ?>
 
-    <div class="container">
-
-      <div class="blog-header">
-        <h1 class="blog-title">The Bootstrap Blog</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
-      </div>
-
-      <div class="row">
-
         <div class="eight columns blog-main">
 
           <div class="blog-post">
-            <h2 class="blog-post-title">About Us</h2>
-            <p>A blog built with PHP, HTML, CSS, JavaScript, and W3Schools and Larry Ullman's help and books!</p>
+            <h2>This site is a project</h2>
+            <p>This site was made to learn about some of the core web development technologies and moreover to integrate them into a single yet simple project: a blog.</p>
+            <p>The technologies mainly utilized here are HTMl, CSS, JS and PHP.</p>
           </div><!-- /.blog-post -->
 
         </div><!-- /.blog-main -->

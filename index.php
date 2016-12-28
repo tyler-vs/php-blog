@@ -5,20 +5,11 @@
  */
 
 // include external sources
-define('PAGETITLE', 'home' );
-include('inc/env.php');
+define('PAGE_TITLE', 'home' );
+define('PAGE_DESCRIPTION', 'welcome to <b>blog project</b> website.' );
 
  ?>
 <?php include('templates/header.php'); ?>
-
-    <div class="container">
-
-      <div class="blog-header">
-        <h1 class="blog-title"><?php print SITENAME; ?></h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
-      </div>
-
-      <div class="row">
 
         <div class="eight columns blog-main">
 
@@ -80,13 +71,6 @@ include('inc/env.php');
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
             <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
           </div><!-- /.blog-post -->
-
-          <!-- <nav>
-            <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
-          </nav> -->
 
         </div><!-- /.blog-main -->
 
