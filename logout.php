@@ -7,8 +7,6 @@
  *   2. removing from server
  */
 
-// even when deleting a session, you must initialize the file
-// with a session_start to access the session.
 session_start();
 
 // clear the session by resetting the session array

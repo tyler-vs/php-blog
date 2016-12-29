@@ -21,14 +21,12 @@
 
 // function to check is a value is coming from
 // a post request and sanitizes the values.
-function preset_value( $val ) {
-  /*if ( isset( $val ) ) {
-    print htmlspecialchars($val);
-  } else {
-    print '';
-  }*/
+function check_preset_value( $val ) {
+
   if (isset($_POST[$val])) {
-    print htmlspecialchars($_POST[$val]);
+    return htmlspecialchars($_POST[$val]);
+  } else {
+    return '';
   }
 }
 
@@ -41,28 +39,21 @@ function preset_value( $val ) {
  * @return [type]              [description]
  */
 
-function make_test_input( $name, $label, $form_request_type = 'POST' ) {
-
-  // var to hold value
-  $stickyValue = '';
-
-
-  if ( strtoupper($requestType) == 'GET' ) {
-    if (isset($_GET[$name])) {
-      $stickyValue = htmlspecialchars($_GET[$name]);
-    }
-  } elseif ( strtoupper($requestType) == 'POST' ) {
-    if (isset($_POST[$name])) {
-      $stickyValue = htmlspecialchars($_POST[$name]);
-    }
-  } /*else {
-    $stickyValue = htmlspecialchars($_POST[$name]);
-  }*/
+function make_form_input( $name, $label, $type = 'text' ) {
 
   // output the input
   print "<label for=\"$name\"> $label :\n";
-  print "<input type=\"text\" name=\"$name\" value=\"$stickyValue\">\n";
+  print "<input class=\"u-full-width\" type=\"$type\" name=\"$name\" value=\"";
+
+  if ($type != 'password') {
+    print check_preset_value($name) . "\">\n";
+  } else {
+    print "\">\n";
+  }
+
   print "</label>\n";
 
-
 }
+
+
+// more functions go here...

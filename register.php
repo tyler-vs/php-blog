@@ -30,13 +30,13 @@ define('PAGE_DESCRIPTION', 'Register to use this website.' );
             if (empty($_POST['email'])) {
               $form_problems[] = 'please enter a email';
             }
-            if (empty($_POST['password1'])) {
+            if (empty($_POST['user_password'])) {
               $form_problems[] = 'please enter a password';
             }
             if (empty($_POST['password2'])) {
               $form_problems[] = 'please enter the password again';
             }
-            if ($_POST['password1'] != $_POST['password2']) {
+            if ($_POST['user_password'] != $_POST['password2']) {
               $form_problems[] = 'your passwords do not match!';
             }
 
@@ -47,35 +47,42 @@ define('PAGE_DESCRIPTION', 'Register to use this website.' );
           } // no else default for registration page.
 
           ?>
-          <form action="login.php" method="post">
+          <form action="register.php" method="post">
+            <?php
+
+            /**
+             * generate form with custom made form functions
+             */
+
+            // a
+            /*$form_items = [
+              'first_name'  =>  array(
+                'placeholder' => 'your first name')
+            ];*/
+             ?>
             <div class="row">
               <div class="twelve columns">
-                <label name="first_name">First Name</label>
-                <input class="u-full-width" type="text" name="first_name" value="<?php preset_value('first_name'); ?>">
+                <?php make_form_input('first_name', 'First name', 'text' ); ?>
               </div>
             </div>
             <div class="row">
               <div class="twelve columns">
-                <label name="last_name">Last Name</label>
-                <input class="u-full-width" type="text" name="last_name" value="<?php preset_value('last_name'); ?>">
+                <?php make_form_input('last_name', 'Last name', 'text'); ?>
               </div>
             </div>
             <div class="row">
               <div class="twelve columns">
-                <label>Email Address</label>
-                <input class="u-full-width" type="email" name="email" value="<?php preset_value('email'); ?>">
+                <?php make_form_input('email', 'Your email address', 'email'); ?>
               </div>
             </div>
             <div class="row">
               <div class="twelve columns">
-                <label>Password</label>
-                <input class="u-full-width" type="password" name="user_password" value="<?php preset_value('password1'); ?>">
+                <?php make_form_input('user_password', 'A password', 'password'); ?>
               </div>
             </div>
             <div class="row">
               <div class="twelve columns">
-                <label>Check Password</label>
-                <input class="u-full-width" type="password" name="password2" value="<?php preset_value('user_password'); ?>">
+                <?php make_form_input('password2', 'Check password', 'password'); ?>
               </div>
             </div>
             <div class="row">
@@ -83,5 +90,13 @@ define('PAGE_DESCRIPTION', 'Register to use this website.' );
             </div>
           </form>
         </div><!-- /.blog-main -->
+
+        <div class="four columns">
+          <pre>
+            <?php if ($_SERVER['REQUEST_METHOD'] = 'POST') {
+              print_r( $_POST );
+            } ?>
+          </pre>
+        </div>
 
 <?php require('templates/footer.php'); ?>

@@ -15,8 +15,6 @@
  */
 
 
-session_start();
-
 /**
  * 01. Includes not-printing php scripts, i.e. env variables, functions
  * --------------------------------------------------------------------

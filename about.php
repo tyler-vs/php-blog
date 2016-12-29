@@ -6,7 +6,7 @@
  */
 
 // page specific variables
-define('PAGE_TITLE', ucfirst('about') );
+define('PAGE_TITLE', 'about' );
 define('PAGE_DESCRIPTION', 'about this website.' );
 
  ?>
