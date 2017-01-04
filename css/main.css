@@ -171,6 +171,7 @@ h6, .h6 {
 /**
  * button components
  */
-/*input.button--round {
+.btn,
+input.btn {
   border-radius: 500px !important;
-}*/
+}

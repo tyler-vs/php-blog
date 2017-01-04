@@ -3,3 +3,4 @@ docs/
 .*
 !.gitignore
 !.editorconfig
+inc/mysql.inc.php

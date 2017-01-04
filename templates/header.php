@@ -5,14 +5,24 @@
  * this is the first script that is included in every page on the website.
  * it handles the following:
  *
+ * 00. Begins output buffering technique
  * 01. Includes not-printing php scripts, i.e. env variables, functions
- * 02. Begins output buffering technique
+ * 02. ---
  * 03. Starts webpage header HTML content
  * 04. Validates and print page's HMTL title
  * 05. Determine and output page navigation links
  * 06. Page header
  *
  */
+
+
+/**
+ * 00. Begins output buffering technique
+ * -------------------------------------
+ * begin output buffering
+ */
+
+ob_start();
 
 
 /**
@@ -23,16 +33,10 @@
  */
 
 require('inc/env.php');
-require('inc/functions-lib.php');
+require('inc/form_functions.inc.php');
 
 
-/**
- * 02. Begins output buffering technique
- * -------------------------------------
- * begin output buffering
- */
 
-ob_start();
 
 
 /**
@@ -72,6 +76,8 @@ ob_start();
            * 05. Determine and output page navigation links
            * ----------------------------------------------
            */
+
+          $this_page = basename($_SERVER['PHP_SELF']);
           // array of pages
           $pages=array(
             'home'          => 'index.php',
@@ -108,7 +114,7 @@ ob_start();
           // output all the available pages
           foreach( $pages as $key => $value ) {
 
-            if ( strtolower('PAGE_TITLE') == $key ) {
+            if ( $this_page == $value ) {
               print '<a class="blog-nav-item active" href="' . $value . '">' . ucwords( $key ) . '</a>';
             } else {
               print '<a class="blog-nav-item" href="' . $value . '">' . ucwords( $key ) . '</a>';

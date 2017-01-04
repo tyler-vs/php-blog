@@ -59,9 +59,3 @@ if ( defined('ERRLOG') && ERRLOG == true ) {  // if defined and TRUE
 date_default_timezone_set(TIME_ZONE);
 
 
-
-/**
- * 05. header action
- * -----------------
- * makeshift action filter
- */

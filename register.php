@@ -6,42 +6,33 @@
 define('PAGE_TITLE', 'register' );
 define('PAGE_DESCRIPTION', 'Register to use this website.' );
 
+$reg_errors = array();
+
  ?>
 <?php include('templates/header.php'); ?>
 
         <div class="col-sm-8 blog-main">
           <?php
           // if request
-          if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { // warning: post is case-sensitive and should appear as uppercase
-
-            // valifation variables
-            $form_problems = [];
-
-            /**
-             * check if any of the expected variables are missing
-             */
+          if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) { // warning: post is case-sensitive and should appear as uppercase
 
             if (empty($_POST['first_name'])) {
-              $form_problems[] = 'please enter a first name';
+              $reg_errors['first_name'] = 'please enter a first name';
             }
             if (empty($_POST['last_name'])) {
-              $form_problems[] = 'please enter a last name';
+              $reg_errors['last_name'] = 'please enter a last name';
             }
             if (empty($_POST['email'])) {
-              $form_problems[] = 'please enter a email';
+              $reg_errors['email'] = 'please enter a email';
             }
-            if (empty($_POST['user_password'])) {
-              $form_problems[] = 'please enter a password';
+            if (empty($_POST['password'])) {
+              $reg_errors['password'] = 'please enter a password';
             }
-            if (empty($_POST['password2'])) {
-              $form_problems[] = 'please enter the password again';
+            if (empty($_POST['check_password'])) {
+              $reg_errors['check_password'] = 'please enter the password again';
             }
-            if ($_POST['user_password'] != $_POST['password2']) {
-              $form_problems[] = 'your passwords do not match!';
-            }
-
-            if (count($form_problems)>0) {
-              print "no errors found!";
+            if ($_POST['password'] != $_POST['check_password']) {
+              $reg_errors['check_password'] = 'your passwords do not match!';
             }
 
           } // no else default for registration page.
@@ -54,39 +45,19 @@ define('PAGE_DESCRIPTION', 'Register to use this website.' );
              * generate form with custom made form functions
              */
 
-            // a
-            /*$form_items = [
-              'first_name'  =>  array(
-                'placeholder' => 'your first name')
-            ];*/
+            create_form_input('first_name', 'text', 'First name: ', $reg_errors, array('required' => 'required'), 'POST');
+
+            create_form_input('last_name', 'text', 'Last name: ', $reg_errors, array('required' => 'required'), 'POST');
+
+            create_form_input('email', 'email', 'Email: ', $reg_errors, array('required' => 'required'), 'POST');
+
+            create_form_input('password', 'password', 'Password: ', $reg_errors, array('required' => 'required'), 'POST');
+
+            create_form_input('check_password', 'password', 'Check password: ', $reg_errors, array('required' => 'required'), 'POST');
+
              ?>
             <div class="row">
-              <div class="twelve columns">
-                <?php make_form_input('first_name', 'First name', 'text' ); ?>
-              </div>
-            </div>
-            <div class="row">
-              <div class="twelve columns">
-                <?php make_form_input('last_name', 'Last name', 'text'); ?>
-              </div>
-            </div>
-            <div class="row">
-              <div class="twelve columns">
-                <?php make_form_input('email', 'Your email address', 'email'); ?>
-              </div>
-            </div>
-            <div class="row">
-              <div class="twelve columns">
-                <?php make_form_input('user_password', 'A password', 'password'); ?>
-              </div>
-            </div>
-            <div class="row">
-              <div class="twelve columns">
-                <?php make_form_input('password2', 'Check password', 'password'); ?>
-              </div>
-            </div>
-            <div class="row">
-              <input class="button--round" type="submit" value="Register">
+              <input class="btn btn-primary" type="submit" value="Register">
             </div>
           </form>
         </div><!-- /.blog-main -->
