@@ -12,7 +12,7 @@ define('PAGE_DESCRIPTION', 'about this website.' );
  ?>
 <?php require('templates/header.php'); ?>
 
-        <div class="eight columns blog-main">
+        <div class="col-sm-8 blog-main">
 
           <div class="blog-post">
             <h2>This site is a project</h2>

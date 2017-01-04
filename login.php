@@ -9,7 +9,7 @@ define('PAGE_DESCRIPTION', 'Please login' );
  ?>
 <?php include('templates/header.php'); ?>
 
-        <div class="eight columns blog-main">
+        <div class="col-sm-8 blog-main">
           <?php
 
           // check for user submission via the REQUEST_METHOD and

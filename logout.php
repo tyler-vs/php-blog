@@ -22,7 +22,7 @@ define('PAGE_DESCRIPTION', 'This is the logout page for the website' );
  ?>
 <?php include('templates/header.php'); ?>
 
-        <div class="eight columns blog-main">
+        <div class="col-sm-8 blog-main">
 
           <p>Go to <a href="index.php">home</a> or <a href="login.php">sign back in</a></p>
 

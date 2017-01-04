@@ -23,7 +23,7 @@ $current_page = 'signup';
 
       <div class="row">
 
-        <div class="eight columns blog-main">
+        <div class="col-sm-8 blog-main">
 
           <div class="blog-post">
             <h2 class="blog-post-title">Signup</h2>

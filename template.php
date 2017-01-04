@@ -21,7 +21,7 @@ include('inc/env.php');
 
       <div class="row">
 
-        <div class="eight columns blog-main">
+        <div class="col-sm-8 blog-main">
 
 
         </div><!-- /.blog-main -->

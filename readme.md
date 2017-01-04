@@ -23,4 +23,6 @@ This section describes how to install the plugin and get it working.
 
 
 ## Resources
-- [basic php coding style guide](https://en.wikibooks.org/wiki/PHP_Programming/Coding_Standards#Header_Comment_Blocks) 
+- [basic php coding style guide](https://en.wikibooks.org/wiki/PHP_Programming/Coding_Standards#Header_Comment_Blocks)
+- [Bootstrap](http://getbootstrap.com/getting-started/#download)
+

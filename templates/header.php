@@ -59,7 +59,8 @@ ob_start();
       $err_log_array[] = 'site title is missing or not defined';
     }
     ?></title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
     <link href="css/main.css" rel="stylesheet">
   </head>
   <body>

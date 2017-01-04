@@ -20,7 +20,7 @@ define('PAGE_DESCRIPTION', 'welcome user.' );
 
  ?>
 <?php include('templates/header.php'); ?>
-        <div class="eight columns blog-main">
+        <div class="col-sm-8 blog-main">
           <?php
           $welcome_messages = [];
           // check to see if session variables is set before greeting the

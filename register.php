@@ -9,7 +9,7 @@ define('PAGE_DESCRIPTION', 'Register to use this website.' );
  ?>
 <?php include('templates/header.php'); ?>
 
-        <div class="eight columns blog-main">
+        <div class="col-sm-8 blog-main">
           <?php
           // if request
           if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { // warning: post is case-sensitive and should appear as uppercase
